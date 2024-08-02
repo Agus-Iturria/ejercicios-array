@@ -68,3 +68,59 @@ console.log(colors)
 //● Elimina el primer color del array.
 colors.shift()
 console.log(colors)
+
+
+//Desarrollar una función que reciba el nombre de un alumno, las notas de sus materias, y la nota de aprobación (4/6/7) e imprima:
+//● Nombre del usuario
+//● Cantidad de materias cursadas
+//● Cantidad de materias aprobadas
+//● Las notas de las materias aprobadas
+//● Cantidad de materias reprobadas
+//● Las notas de las materias reprobadas
+//● Si el alumno pasó de año (aprobó todas las materias)
+//● Indicar si el alumno tuvo algún 10
+//● Indicar si el alumno aprobó alguna materia raspando (con la nota mínima de aprobación)
+
+
+let subjectNotes = [6,7,5,3]
+function studentNotes(studentName, subjectNotes,aprovementNote){
+    console.log("Nombre del alumno: " + studentName)
+    console.log("Cantidad de materias cursadas: " + subjectNotes.length)
+
+    const aprovedSubjects = subjectNotes.filter(function(note)
+    {
+        return note >= aprovementNote 
+    });
+
+    console.log("Cantidad de materias aprobadas: " + aprovedSubjects.length);
+    console.log("Notas de materias aprobadas: "+ aprovedSubjects)
+
+    const disaprovedSubjects = subjectNotes.filter(function(disaprovedNote)
+    {
+        return disaprovedNote < aprovementNote 
+    });
+
+    console.log("Cantidad de materias desaprobadas: " + disaprovedSubjects.length);
+    console.log("Notas de materias desaprobadas: "+ disaprovedSubjects)
+
+    if (subjectNotes = aprovedSubjects){
+        console.log("El alumno paso de año")
+    }
+    else{
+        console.log("El alumno no paso de año")
+    }
+
+    const ten = subjectNotes.includes(10);
+    if (ten == true){
+        console.log("El alumno tuvo un 10")
+    }
+    else{
+        console.log("El alumno no tuvo un 10")
+    }
+    
+    
+
+
+} 
+
+studentNotes("Juan",subjectNotes, 6)
