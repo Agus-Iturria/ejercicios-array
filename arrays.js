@@ -117,7 +117,14 @@ function studentNotes(studentName, subjectNotes,aprovementNote){
     else{
         console.log("El alumno no tuvo un 10")
     }
-    
+
+    const passedWithMinimum = subjectNotes.includes(aprovementNote);
+    if (passedWithMinimum == aprovementNote){
+        console.log("El alumno aprobó alguna materia raspando")
+    }
+    else{
+        console.log("El alumno no aprobó ninguna materia raspando")
+    }
     
 
 
